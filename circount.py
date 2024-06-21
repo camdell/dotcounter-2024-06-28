@@ -23,7 +23,7 @@ fig, axes = subplots(2, 2, figsize=(10, 10))
 
 img = cv2.imread(str(args.imagefile))
 axes[0, 0].imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
-axes[0, 0].set_title('Original', loc='left')
+axes[0, 0].set_title('Original')
 
 # apply medianBlur to smooth image before threshholding
 #   smooth image by 7x7 pixels, may need to adjust a bit
@@ -60,7 +60,7 @@ for ax, (color, (lower, upper)) in zip(axes.flat[1:], dot_colors.items()):
 
 
     ax.imshow(cv2.cvtColor(output, cv2.COLOR_BGR2RGB))
-    ax.set_title(f'{color.title()} = {index}', loc='left')
+    ax.set_title(f'{color.title()} = {index}')
     print(f'No. of {color} circles detected = {index}')
 
 
